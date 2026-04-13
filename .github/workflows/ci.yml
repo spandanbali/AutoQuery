@@ -31,8 +31,6 @@ jobs:
 
   frontend-test:
     runs-on: ubuntu-latest
-    env:
-      CI: "false"
 
     steps:
       - name: Checkout code
@@ -51,4 +49,4 @@ jobs:
       - name: Build frontend
         run: |
           cd frontend
-          npm run build
+          npx vite build
