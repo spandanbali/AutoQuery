@@ -1,91 +1,65 @@
 {
     "tables": {
-        "patients": {
+        "orders": {
             "columns": [
-                "patient_id",
+                "id",
+                "customer_id",
+                "order_date"
+            ],
+            "primary_key": [
+                "id"
+            ]
+        },
+        "order_items": {
+            "columns": [
+                "id",
+                "order_id",
+                "product_id",
+                "quantity"
+            ],
+            "primary_key": [
+                "id"
+            ]
+        },
+        "products": {
+            "columns": [
+                "id",
                 "name",
-                "age",
-                "gender",
-                "city",
-                "registration_date"
+                "price"
             ],
             "primary_key": [
-                "patient_id"
+                "id"
             ]
         },
-        "appointments": {
+        "customers": {
             "columns": [
-                "appointment_id",
-                "patient_id",
-                "doctor_id",
-                "appointment_date",
-                "status"
-            ],
-            "primary_key": [
-                "appointment_id"
-            ]
-        },
-        "doctors": {
-            "columns": [
-                "doctor_id",
+                "id",
                 "name",
-                "specialization",
-                "experience",
-                "consultation_fee"
+                "email"
             ],
             "primary_key": [
-                "doctor_id"
-            ]
-        },
-        "treatments": {
-            "columns": [
-                "treatment_id",
-                "appointment_id",
-                "diagnosis",
-                "treatment_description",
-                "cost"
-            ],
-            "primary_key": [
-                "treatment_id"
-            ]
-        },
-        "billing": {
-            "columns": [
-                "bill_id",
-                "appointment_id",
-                "total_amount",
-                "payment_status",
-                "payment_date"
-            ],
-            "primary_key": [
-                "bill_id"
+                "id"
             ]
         }
     },
     "relationships": [
         {
-            "from_table": "appointments",
-            "from_column": "doctor_id",
-            "to_table": "doctors",
-            "to_column": "doctor_id"
+            "from_table": "orders",
+            "from_column": "customer_id",
+            "to_table": "customers",
+            "to_column": "id"
         },
         {
-            "from_table": "appointments",
-            "from_column": "patient_id",
-            "to_table": "patients",
-            "to_column": "patient_id"
+            "from_table": "order_items",
+            "from_column": "order_id",
+            "to_table": "orders",
+            "to_column": "id"
         },
         {
-            "from_table": "treatments",
-            "from_column": "appointment_id",
-            "to_table": "appointments",
-            "to_column": "appointment_id"
-        },
-        {
-            "from_table": "billing",
-            "from_column": "appointment_id",
-            "to_table": "appointments",
-            "to_column": "appointment_id"
+            "from_table": "order_items",
+            "from_column": "product_id",
+            "to_table": "products",
+            "to_column": "id"
         }
     ]
 }
