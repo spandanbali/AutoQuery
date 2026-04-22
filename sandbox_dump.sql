@@ -2,9 +2,9 @@
 -- PostgreSQL database dump
 --
 
-\restrict VESUb1wMTWOZohVhwTQBEAgKSNL8u4HJsX39FfRY94O2mv8AtcrbKKDbe8SfZby
+\restrict 5qQGQjL7UQorSjQU2WQuwp1SRlduoKpfG0CN6xvOrQXuvW6vYMq03SZ7qwKOtoD
 
--- Dumped from database version 18.3
+-- Dumped from database version 17.8 (a48d9ca)
 -- Dumped by pg_dump version 18.3
 
 SET statement_timeout = 0;
@@ -24,7 +24,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: customers; Type: TABLE; Schema: public; Owner: postgres
+-- Name: customers; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.customers (
@@ -34,10 +34,10 @@ CREATE TABLE public.customers (
 );
 
 
-ALTER TABLE public.customers OWNER TO postgres;
+ALTER TABLE public.customers OWNER TO neondb_owner;
 
 --
--- Name: customers_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: customers_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.customers_id_seq
@@ -49,17 +49,17 @@ CREATE SEQUENCE public.customers_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.customers_id_seq OWNER TO postgres;
+ALTER SEQUENCE public.customers_id_seq OWNER TO neondb_owner;
 
 --
--- Name: customers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: customers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.customers_id_seq OWNED BY public.customers.id;
 
 
 --
--- Name: order_items; Type: TABLE; Schema: public; Owner: postgres
+-- Name: order_items; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.order_items (
@@ -70,10 +70,10 @@ CREATE TABLE public.order_items (
 );
 
 
-ALTER TABLE public.order_items OWNER TO postgres;
+ALTER TABLE public.order_items OWNER TO neondb_owner;
 
 --
--- Name: order_items_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: order_items_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.order_items_id_seq
@@ -85,17 +85,17 @@ CREATE SEQUENCE public.order_items_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.order_items_id_seq OWNER TO postgres;
+ALTER SEQUENCE public.order_items_id_seq OWNER TO neondb_owner;
 
 --
--- Name: order_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: order_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.order_items_id_seq OWNED BY public.order_items.id;
 
 
 --
--- Name: orders; Type: TABLE; Schema: public; Owner: postgres
+-- Name: orders; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.orders (
@@ -105,10 +105,10 @@ CREATE TABLE public.orders (
 );
 
 
-ALTER TABLE public.orders OWNER TO postgres;
+ALTER TABLE public.orders OWNER TO neondb_owner;
 
 --
--- Name: orders_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: orders_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.orders_id_seq
@@ -120,17 +120,17 @@ CREATE SEQUENCE public.orders_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.orders_id_seq OWNER TO postgres;
+ALTER SEQUENCE public.orders_id_seq OWNER TO neondb_owner;
 
 --
--- Name: orders_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: orders_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.orders_id_seq OWNED BY public.orders.id;
 
 
 --
--- Name: products; Type: TABLE; Schema: public; Owner: postgres
+-- Name: products; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.products (
@@ -140,10 +140,10 @@ CREATE TABLE public.products (
 );
 
 
-ALTER TABLE public.products OWNER TO postgres;
+ALTER TABLE public.products OWNER TO neondb_owner;
 
 --
--- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.products_id_seq
@@ -155,45 +155,45 @@ CREATE SEQUENCE public.products_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.products_id_seq OWNER TO postgres;
+ALTER SEQUENCE public.products_id_seq OWNER TO neondb_owner;
 
 --
--- Name: products_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: products_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.products_id_seq OWNED BY public.products.id;
 
 
 --
--- Name: customers id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: customers id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.customers ALTER COLUMN id SET DEFAULT nextval('public.customers_id_seq'::regclass);
 
 
 --
--- Name: order_items id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: order_items id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.order_items ALTER COLUMN id SET DEFAULT nextval('public.order_items_id_seq'::regclass);
 
 
 --
--- Name: orders id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: orders id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.orders ALTER COLUMN id SET DEFAULT nextval('public.orders_id_seq'::regclass);
 
 
 --
--- Name: products id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: products id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.products ALTER COLUMN id SET DEFAULT nextval('public.products_id_seq'::regclass);
 
 
 --
--- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 COPY public.customers (id, name, email) FROM stdin;
@@ -204,7 +204,7 @@ COPY public.customers (id, name, email) FROM stdin;
 
 
 --
--- Data for Name: order_items; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: order_items; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 COPY public.order_items (id, order_id, product_id, quantity) FROM stdin;
@@ -217,7 +217,7 @@ COPY public.order_items (id, order_id, product_id, quantity) FROM stdin;
 
 
 --
--- Data for Name: orders; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: orders; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 COPY public.orders (id, customer_id, order_date) FROM stdin;
@@ -228,7 +228,7 @@ COPY public.orders (id, customer_id, order_date) FROM stdin;
 
 
 --
--- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 COPY public.products (id, name, price) FROM stdin;
@@ -239,35 +239,35 @@ COPY public.products (id, name, price) FROM stdin;
 
 
 --
--- Name: customers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: customers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.customers_id_seq', 3, true);
 
 
 --
--- Name: order_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: order_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.order_items_id_seq', 5, true);
 
 
 --
--- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.orders_id_seq', 3, true);
 
 
 --
--- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.products_id_seq', 3, true);
 
 
 --
--- Name: customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.customers
@@ -275,7 +275,7 @@ ALTER TABLE ONLY public.customers
 
 
 --
--- Name: order_items order_items_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: order_items order_items_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.order_items
@@ -283,7 +283,7 @@ ALTER TABLE ONLY public.order_items
 
 
 --
--- Name: orders orders_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: orders orders_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.orders
@@ -291,7 +291,7 @@ ALTER TABLE ONLY public.orders
 
 
 --
--- Name: products products_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: products products_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.products
@@ -299,7 +299,7 @@ ALTER TABLE ONLY public.products
 
 
 --
--- Name: order_items order_items_order_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: order_items order_items_order_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.order_items
@@ -307,7 +307,7 @@ ALTER TABLE ONLY public.order_items
 
 
 --
--- Name: order_items order_items_product_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: order_items order_items_product_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.order_items
@@ -315,7 +315,7 @@ ALTER TABLE ONLY public.order_items
 
 
 --
--- Name: orders orders_customer_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: orders orders_customer_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.orders
@@ -323,8 +323,22 @@ ALTER TABLE ONLY public.orders
 
 
 --
+-- Name: DEFAULT PRIVILEGES FOR SEQUENCES; Type: DEFAULT ACL; Schema: public; Owner: cloud_admin
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON SEQUENCES TO neon_superuser WITH GRANT OPTION;
+
+
+--
+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: public; Owner: cloud_admin
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON TABLES TO neon_superuser WITH GRANT OPTION;
+
+
+--
 -- PostgreSQL database dump complete
 --
 
-\unrestrict VESUb1wMTWOZohVhwTQBEAgKSNL8u4HJsX39FfRY94O2mv8AtcrbKKDbe8SfZby
+\unrestrict 5qQGQjL7UQorSjQU2WQuwp1SRlduoKpfG0CN6xvOrQXuvW6vYMq03SZ7qwKOtoD
 

@@ -46,3 +46,40 @@ jobs:
 
       - name: Build frontend
         run: cd frontend && npx vite build
+
+
+
+# .........................................................
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [backend-test, frontend-test]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r backend/requirements.txt
+
+      - name: Send Success Email
+        if: success()
+        run: |
+          python backend/email_service.py success
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+
+      - name: Send Failure Email
+        if: failure()
+        run: |
+          python backend/email_service.py failure
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}

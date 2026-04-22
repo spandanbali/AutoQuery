@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from backend.email_service import send_email
 from backend.services.llm_service import generate_sql_from_llm, fix_sql_with_llm, optimize_sql_with_llm, explain_result_with_llm
 from backend.services.sql_service import run_query
 # from backend.utils.sql_validator import is_safe_query
@@ -37,6 +38,20 @@ def generate_query():
         #     }), 400
 
         sql = generate_sql_from_llm(user_query, provider)
+        sql = generate_sql_from_llm(user_query, provider)
+
+        send_email(
+            "✅ AutoQuery Success",
+            f"""
+User Input:
+{user_query}
+
+Generated SQL:
+{sql}
+
+Status: SUCCESS
+"""
+        )
 
         final_sql = sql
 
@@ -228,4 +243,16 @@ def reset_sandbox():
         })
 
     except Exception as e:
+        send_email(
+            "❌ AutoQuery Failed",
+            f"""
+Error:
+{str(e)}
+
+Status: FAILED
+"""
+        )
+
+        print("Sandbox reset failed...")
+
         return jsonify({"error": str(e)}), 500

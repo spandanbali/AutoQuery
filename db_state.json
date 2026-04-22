@@ -1,1 +1,1 @@
-{"prod_url": "postgresql://postgres:postgres123@localhost:5432/autoquery", "sandbox_url": "postgresql://postgres:postgres123@localhost:5432/sandbox_db"}
+{"prod_url": "postgresql://neondb_owner:npg_3DrBuZTh1FbR@ep-dry-feather-a19gbrm3.ap-southeast-1.aws.neon.tech/neondb?sslmode=require", "sandbox_url": "postgresql://neondb_owner:npg_3DrBuZTh1FbR@ep-dry-feather-a19gbrm3.ap-southeast-1.aws.neon.tech/sandbox_db"}
