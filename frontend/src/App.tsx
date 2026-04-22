@@ -10,7 +10,7 @@ import QueryInterface from './components/QueryInterface';
 
 import type { QueryResponse, GraphData } from './types';
 
-const API_BASE = "http://localhost:5001/api";
+const API_BASE = "https://autoquery-cm17.onrender.com/api";
 
 const containerVariants = {
   hidden: { opacity: 0 },
